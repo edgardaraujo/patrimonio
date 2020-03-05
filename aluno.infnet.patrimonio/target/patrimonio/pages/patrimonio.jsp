@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Lista patrimonio</title>
 </head>
 <body>
 	<!-- inluir elemento na página -->
@@ -13,16 +13,33 @@
 
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-10 ">
-				<div class="row">
+			
+			<h1>Lista patrimonio</h1>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Descrição</th>
+						<th scope="col">Localização</th>
+						<th scope="col">Editar</th>						
+					</tr>
+				</thead>
+				<tbody>
+
 					<c:forEach var="pat" items="${ lista_patrimonio }">
-						<div class="col-4">
-							<p class="card-text">${ pat.descricao }</p>
-						</div>
+						<tr>
+							<th scope="row">${ pat.id }</th>
+							<td>${ pat.descricao }</td>
+							<td>${ pat.localizacao }</td>
+							<td><a class="btn btn-primary" href="#">Editar</a></td>
+						</tr>
 					</c:forEach>
-				</div>
-			</div>
+				</tbody>
+			</table>
+
 		</div>
 	</div>
+
 </body>
 </html>
