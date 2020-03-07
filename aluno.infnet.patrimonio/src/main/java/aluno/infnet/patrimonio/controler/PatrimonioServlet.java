@@ -30,6 +30,8 @@ public class PatrimonioServlet extends HttpServlet{
 		
 		List<Patrimonio> patrimonios = jpadao.findAll();		
 		
+		System.out.println("lista patrimonio = "+patrimonios);
+		
 		req.setAttribute("lista_patrimonio", patrimonios);
 		
 		req.getRequestDispatcher("pages/patrimonio.jsp").forward(req, resp);

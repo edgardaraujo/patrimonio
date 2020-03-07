@@ -22,7 +22,8 @@
 						<th scope="col">#</th>
 						<th scope="col">Descrição</th>
 						<th scope="col">Localização</th>
-						<th scope="col">Editar</th>						
+						<th scope="col">Editar</th>
+						<th scope="col">Excluir</th>						
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +34,7 @@
 							<td>${ pat.descricao }</td>
 							<td>${ pat.localizacao }</td>
 							<td><a class="btn btn-primary" href="#">Editar</a></td>
+							<td><a class="btn btn-danger" href="#">Excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

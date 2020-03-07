@@ -4,6 +4,8 @@ create database patrimonio;
 
 use patrimonio;
 
+drop table patrimonio;
+
 create table patrimonio (
      id int not null primary key auto_increment,
      descricao varchar(80),
