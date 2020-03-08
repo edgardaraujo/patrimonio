@@ -28,13 +28,13 @@
 				</thead>
 				<tbody>
 
-					<c:forEach var="pat" items="${ lista_patrimonio }">
+					<c:forEach var="pat" items="${lista}">
 						<tr>
 							<th scope="row">${ pat.id }</th>
 							<td>${ pat.descricao }</td>
 							<td>${ pat.localizacao }</td>
-							<td><a class="btn btn-primary" href="#">Editar</a></td>
-							<td><a class="btn btn-danger" href="#">Excluir</a></td>
+							<td><a class="btn btn-primary" href="edit?id=<c:out value='${pat.id}'/>">Editar</a></td>
+							<td><a class="btn btn-danger" href="delete?id=<c:out value='${pat.id}'/>">Excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

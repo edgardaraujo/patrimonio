@@ -1,6 +1,8 @@
-C:\Users\edgard.araujo\git\patrimonio\aluno.infnet.patrimonio\src\main\java\aluno\infnet\patrimonio\negocio\dao\JpaDAO.java
-C:\Users\edgard.araujo\git\patrimonio\aluno.infnet.patrimonio\src\main\java\aluno\infnet\patrimonio\negocio\TesteConexao.java
-C:\Users\edgard.araujo\git\patrimonio\aluno.infnet.patrimonio\src\main\java\aluno\infnet\patrimonio\negocio\dao\PatrimonioJPADAO.java
-C:\Users\edgard.araujo\git\patrimonio\aluno.infnet.patrimonio\src\main\java\aluno\infnet\patrimonio\controler\PatrimonioServlet.java
-C:\Users\edgard.araujo\git\patrimonio\aluno.infnet.patrimonio\src\main\java\aluno\infnet\patrimonio\negocio\JpaConnection.java
-C:\Users\edgard.araujo\git\patrimonio\aluno.infnet.patrimonio\src\main\java\aluno\infnet\patrimonio\modelo\Patrimonio.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/dao/PatrimonioJPADAO.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/dao/PatrimonioDAO.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/MysqlConnection.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/dao/JpaDAO.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/JpaConnection.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/controler/PatrimonioServlet.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/TesteConexao.java
+/Users/joeblack/git/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/modelo/Patrimonio.java

@@ -27,8 +27,8 @@
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="<c:url value='/PatrimonioSrv' />">Lista patrimonio</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/pages/adicionar.jsp">Adicionar patrimonio</a></li>
-				</li>
+<%-- 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/pages/adicionar.jsp">Adicionar patrimonio</a></li> --%>
+				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/new">Adicionar patrimonio</a></li>
 			</ul>
 		</div>
 	</nav>

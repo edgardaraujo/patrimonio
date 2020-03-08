@@ -31,7 +31,7 @@ public class JpaDAO<T, ID> {
 		return true;
 	}
 
-	public Boolean edit(T entity) {
+	public Boolean update(T entity) {
 		this.em.getTransaction().begin();
 		this.em.merge(entity);
 		this.em.getTransaction().commit();

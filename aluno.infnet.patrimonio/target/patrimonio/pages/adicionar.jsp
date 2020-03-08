@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="row mt-4 justify-content-center">
-					<button type="submit" class="btn btn-success">Adicionar</button>
+					<button type="submit" class="btn btn-success" action="insert" method="post">Adicionar</button>
 				</div>
 			</form>
 		</div>
