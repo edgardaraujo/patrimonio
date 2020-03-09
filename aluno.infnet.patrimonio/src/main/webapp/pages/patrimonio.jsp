@@ -1,47 +1,71 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Lista patrimonio</title>
-</head>
-<body>
-	<!-- inluir elemento na página -->
-	<jsp:include page="template/header.jsp"></jsp:include>
 
-	<div class="container">
-		<div class="row justify-content-center">
-			
-			<h1>Lista patrimonio</h1>
-			
-			<table class="table table-striped">
+<head>
+<title>Inventário Patrimonial</title>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/main.css">
+
+</head>
+
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: gray">
+
+			<ul class="navbar-nav">
+				<li><a href="<%=request.getContextPath()%>/list"
+					class="nav-link">Listar Patrimonio</a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+
+	<div class="row">
+	
+		<div class="container">
+			<h3 class="text-center">Inventário Patrimonial</h3>
+			<hr>
+			<div class="container text-left">
+
+				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Adicionar
+					Patrimonio</a>
+			</div>
+			<br>
+			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Descrição</th>
-						<th scope="col">Localização</th>
-						<th scope="col">Editar</th>
-						<th scope="col">Excluir</th>						
+						<th>ID</th>
+						<th>Descrição</th>
+						<th>Localização</th>
+						<th>Ação</th>
 					</tr>
 				</thead>
 				<tbody>
 
 					<c:forEach var="pat" items="${listaPatrimonio}">
+
 						<tr>
-							<th scope="row">${ pat.id }</th>
-							<td>${ pat.descricao }</td>
-							<td>${ pat.localizacao }</td>
-							<td><a class="btn btn-primary" href="edit?id=<c:out value='${pat.id}'/>">Editar</a></td>
-							<td><a class="btn btn-danger" href="delete?id=<c:out value='${pat.id}'/>">Excluir</a></td>
+							<td><c:out value="${pat.id}" /></td>
+							<td><c:out value="${pat.descricao}" /></td>
+							<td><c:out value="${pat.localizacao}" /></td>
+
+							<td><a href="edit?id=<c:out value='${pat.id}' />">Editar</a>
+								&nbsp;&nbsp;&nbsp;&nbsp; <a
+								href="delete?id=<c:out value='${pat.id}' />">Deletar</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
-			</table>
 
+			</table>
 		</div>
 	</div>
-
 </body>
+
 </html>

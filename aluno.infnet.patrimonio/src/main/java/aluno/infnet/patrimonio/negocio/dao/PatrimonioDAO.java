@@ -56,9 +56,9 @@ public class PatrimonioDAO {
 
 	// Update Patrimonio
 	public boolean updatePatrimonio(Patrimonio patrimonio) {
-		String sql = "update patrimonio set descricao =?, localizacao =? where id =?";
+		String sql = "update patrimonio set descricao = ?, localizacao = ? where id = ?";
 		boolean rowUpdated;
-		rowUpdated = true;
+		rowUpdated = false;
 		try {
 			pstm = con.prepareStatement(sql);
 			pstm.setString(1, patrimonio.getDescricao());

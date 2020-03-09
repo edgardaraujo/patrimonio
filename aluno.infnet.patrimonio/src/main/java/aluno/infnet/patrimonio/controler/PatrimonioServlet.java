@@ -12,20 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aluno.infnet.patrimonio.modelo.Patrimonio;
-import aluno.infnet.patrimonio.negocio.dao.JpaDAO;
 import aluno.infnet.patrimonio.negocio.dao.PatrimonioDAO;
-import aluno.infnet.patrimonio.negocio.dao.PatrimonioJPADAO;
 
 @WebServlet("/")
 public class PatrimonioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private JpaDAO jpadao;
 	private PatrimonioDAO dao;
 
 	public PatrimonioServlet() {
 		this.dao = new PatrimonioDAO();
-		this.jpadao = new PatrimonioJPADAO();
 	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -101,14 +97,14 @@ public class PatrimonioServlet extends HttpServlet {
 		int id = Integer.parseInt(req.getParameter("id"));
 		String descr = req.getParameter("descricao");
 		String local = req.getParameter("localizacao");
-		Patrimonio pat = new Patrimonio(id, descr, local);
+		Patrimonio pat = new Patrimonio(id,descr,local);
 		dao.updatePatrimonio(pat);
 		resp.sendRedirect("list");
 	}
 
 	// Método Default - listar patrimonio
 	private void listPatrimonio(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Patrimonio> lista = jpadao.findAll();
+		List<Patrimonio> lista = dao.findAllPatrimonio();
 		req.setAttribute("listaPatrimonio", lista);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("pages/patrimonio.jsp");
 		dispatcher.forward(req, resp);
