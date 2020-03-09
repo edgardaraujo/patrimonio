@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aluno.infnet.patrimonio.modelo.Patrimonio;
+import aluno.infnet.patrimonio.negocio.dao.JpaDAO;
 import aluno.infnet.patrimonio.negocio.dao.PatrimonioDAO;
 
 @WebServlet("/")
@@ -19,41 +20,43 @@ public class PatrimonioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private PatrimonioDAO dao;
+	private JpaDAO jpadao;
 
 	public PatrimonioServlet() {
 		this.dao = new PatrimonioDAO();
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		String action = req.getServletPath();
-		
+
 		try {
 			switch (action) {
 			case "/new":
-				showNewFormulario(req,resp);
+				showNewFormulario(req, resp);
 				break;
 			case "/insert":
-				insertPatrimonio(req,resp);
+				insertPatrimonio(req, resp);
 				break;
 			case "/delete":
-				deletePatrimonio(req,resp);
+				deletePatrimonio(req, resp);
 				break;
 			case "/edit":
-				showEditFormulario(req,resp);
+				showEditFormulario(req, resp);
 				break;
 			case "/update":
-				updatePatrimonio(req,resp);
+				updatePatrimonio(req, resp);
 				break;
 			default:
-				listPatrimonio(req,resp);
+				listPatrimonio(req, resp);
 				break;
-				
+
 			}
-		}catch(SQLException e) {
-			throw new ServletException(e)
-;		}
-		
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
+
 	}
 
 	// Mostrar formulário para inserir novo patrimonio
@@ -94,6 +97,7 @@ public class PatrimonioServlet extends HttpServlet {
 	// Update Patrimonio no banco
 	private void updatePatrimonio(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+
 		int id = Integer.parseInt(req.getParameter("id"));
 		String descr = req.getParameter("descricao");
 		String local = req.getParameter("localizacao");

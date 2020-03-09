@@ -13,7 +13,7 @@ public class MysqlConnection {
 		if(con ==null) {
 			String url = "jdbc:mysql://localhost:3306/patrimonio?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true";
 			String user = "root";
-			String pass = "Ben$auer11";
+			String pass = "root@321";
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				con = DriverManager.getConnection(url, user, pass);

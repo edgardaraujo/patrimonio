@@ -21,18 +21,19 @@ public class PatrimonioDAO {
 	}
 
 	// Seleciona Patrimonio pelo id
-	public Patrimonio selectPatrimonio(int id) {
+	public Patrimonio selectPatrimonio(int pid) {
 		Patrimonio pat = null;
 		String sql = "select id,descricao,localizacao from patrimonio where id =?";
 		try {
 			pstm = con.prepareStatement(sql);
-			pstm.setInt(1, id);
+			pstm.setInt(1, pid);
 			rs = pstm.executeQuery();
 
 			while (rs.next()) {
+				Integer id = rs.getInt("id");
 				String descricao = rs.getString("descricao");
 				String localizacao = rs.getString("localizacao");
-				pat = new Patrimonio(descricao, localizacao);
+				pat = new Patrimonio(id, descricao, localizacao);
 			}
 
 		} catch (Exception e) {
