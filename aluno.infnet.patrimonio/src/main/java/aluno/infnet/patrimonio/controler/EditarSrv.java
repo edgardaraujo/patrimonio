@@ -34,7 +34,7 @@ public class EditarSrv extends HttpServlet {
 
 	    @Override
 	    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+	    	req.setCharacterEncoding("UTF-8");
 	    	int id = Integer.parseInt(req.getParameter("id"));
 	        String descricao = req.getParameter("descricao");
 	        String localizacao = req.getParameter("localizacao");

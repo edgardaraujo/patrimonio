@@ -29,7 +29,8 @@ public class AdicionarSrv extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String descricao = req.getParameter("descricao");
+    	req.setCharacterEncoding("UTF-8");
+    	String descricao = req.getParameter("descricao");
         String localizacao = req.getParameter("localizacao");
         Patrimonio pat = new Patrimonio(descricao,localizacao);
         jpadao.save(pat);
