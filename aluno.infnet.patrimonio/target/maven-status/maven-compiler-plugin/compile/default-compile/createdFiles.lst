@@ -1,8 +1,6 @@
-aluno\infnet\patrimonio\negocio\dao\JpaDAO.class
-aluno\infnet\patrimonio\negocio\dao\PatrimonioDAO.class
-aluno\infnet\patrimonio\negocio\MysqlConnection.class
-aluno\infnet\patrimonio\negocio\TesteConexao.class
-aluno\infnet\patrimonio\modelo\Patrimonio.class
-aluno\infnet\patrimonio\negocio\JpaConnection.class
-aluno\infnet\patrimonio\negocio\dao\PatrimonioJPADAO.class
-aluno\infnet\patrimonio\controler\PatrimonioServlet.class
+aluno/infnet/patrimonio/negocio/dao/PatrimonioJPADAO.class
+aluno/infnet/patrimonio/negocio/dao/JpaDAO.class
+aluno/infnet/patrimonio/negocio/JpaConnection.class
+aluno/infnet/patrimonio/modelo/Patrimonio.class
+aluno/infnet/patrimonio/controler/PatrimonioServlet.class
+aluno/infnet/patrimonio/negocio/TesteConexao.class

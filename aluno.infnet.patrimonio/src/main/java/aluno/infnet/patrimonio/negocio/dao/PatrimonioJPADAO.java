@@ -7,5 +7,4 @@ public class PatrimonioJPADAO extends JpaDAO<Patrimonio, Integer>{
 	public PatrimonioJPADAO() {
 		super(Patrimonio.class);
 	}
-	
 }

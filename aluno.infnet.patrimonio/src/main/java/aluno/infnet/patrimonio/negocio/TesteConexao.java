@@ -12,10 +12,10 @@ public class TesteConexao {
 		PatrimonioJPADAO dao = new PatrimonioJPADAO();
 		
 		//criar patrimonio
-		//Patrimonio patrimonio = new Patrimonio();
-		//patrimonio.setDescricao("Dell Inspiron 15");
-		//patrimonio.setLocalizacao("Sala 101 - prédio auxiliar");
-		//dao.save(patrimonio);
+		Patrimonio patrimonio = new Patrimonio();
+		patrimonio.setDescricao("Dell Inspiron 15");
+		patrimonio.setLocalizacao("Sala 101 - prÃ©dio auxiliar");
+		dao.save(patrimonio);
 		
 		//deletar por id
 		//Patrimonio patrimonio = dao.find(1);
@@ -26,11 +26,11 @@ public class TesteConexao {
 		//System.out.println("find patrimonio(1) = "+patrimonio);
 		
 		//editar
-		Patrimonio patrimonio = new Patrimonio();
-		patrimonio.setId(12);
-		patrimonio.setDescricao("Dell Inspiron 15");
-		patrimonio.setLocalizacao("Sala 101 - prédio auxiliar");
-		dao.update(patrimonio);
+//		Patrimonio patrimonio = new Patrimonio();
+//		patrimonio.setId(12);
+//		patrimonio.setDescricao("Dell Inspiron 15");
+//		patrimonio.setLocalizacao("Sala 101 - prï¿½dio auxiliar");
+//		dao.update(patrimonio);
 		
 		//listar todos
 		List<Patrimonio> lista = dao.findAll();

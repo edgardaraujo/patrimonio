@@ -12,19 +12,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aluno.infnet.patrimonio.modelo.Patrimonio;
-import aluno.infnet.patrimonio.negocio.dao.JpaDAO;
-import aluno.infnet.patrimonio.negocio.dao.PatrimonioDAO;
+import aluno.infnet.patrimonio.negocio.dao.PatrimonioJPADAO;
 
 @WebServlet("/")
 public class PatrimonioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private PatrimonioDAO dao;
-	private JpaDAO jpadao;
+	private PatrimonioJPADAO jpadao;
 
 	public PatrimonioServlet() {
-		this.dao = new PatrimonioDAO();
+		this.jpadao = new PatrimonioJPADAO();
 	}
+	
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -72,7 +71,8 @@ public class PatrimonioServlet extends HttpServlet {
 		String descr = req.getParameter("descricao");
 		String local = req.getParameter("localizacao");
 		Patrimonio npat = new Patrimonio(descr, local);
-		dao.insertPatrimonio(npat);
+		//dao.insertPatrimonio(npat);
+		jpadao.save(npat);
 		resp.sendRedirect("list");
 	}
 
@@ -80,7 +80,9 @@ public class PatrimonioServlet extends HttpServlet {
 	private void deletePatrimonio(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException, SQLException {
 		int id = Integer.parseInt(req.getParameter("id"));
-		dao.deletePatrimonio(id);
+		//Patrimonio pat = jpadao.find(id);
+		//jpadao.delete(pat);
+		jpadao.delete(id);
 		resp.sendRedirect("list");
 	}
 
@@ -88,8 +90,8 @@ public class PatrimonioServlet extends HttpServlet {
 	private void showEditFormulario(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));
-		Patrimonio currentPatrimonio = dao.selectPatrimonio(id);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("pages/adicionar.jsp");
+		Patrimonio currentPatrimonio = jpadao.find(id);
+		RequestDispatcher dispatcher = req.getRequestDispatcher("pages/editar.jsp");
 		req.setAttribute("patrimonio", currentPatrimonio);
 		dispatcher.forward(req, resp);
 	}
@@ -102,13 +104,13 @@ public class PatrimonioServlet extends HttpServlet {
 		String descr = req.getParameter("descricao");
 		String local = req.getParameter("localizacao");
 		Patrimonio pat = new Patrimonio(id,descr,local);
-		dao.updatePatrimonio(pat);
+		jpadao.update(pat);
 		resp.sendRedirect("list");
 	}
 
 	// Método Default - listar patrimonio
 	private void listPatrimonio(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Patrimonio> lista = dao.findAllPatrimonio();
+		List<Patrimonio> lista = jpadao.findAll();
 		req.setAttribute("listaPatrimonio", lista);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("pages/patrimonio.jsp");
 		dispatcher.forward(req, resp);
