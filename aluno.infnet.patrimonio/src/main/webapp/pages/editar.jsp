@@ -11,22 +11,11 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/main.css">
 <body>
-
-	<header>
-		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: gray">
-
-			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Listar Patrimonio</a></li>
-			</ul>
-		</nav>
-	</header>
 	<br>
 	<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">
-				<form action="update" method="get">
+				<form action="<c:url value="/edit"/>" method="post">
 
 					<input type="hidden" name="id"
 						value="<c:out value='${patrimonio.id}' />" />

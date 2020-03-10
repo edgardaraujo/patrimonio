@@ -11,57 +11,25 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/main.css">
 <body>
-
-	<header>
-		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: gray">
-
-			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Listar Patrimonio</a></li>
-			</ul>
-		</nav>
-	</header>
 	<br>
 	<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">
-				<c:if test="${patrimonio != null}">
-					<form action="update" method="get">
-				</c:if>
-				<c:if test="${patrimonio == null}">
-					<form action="insert" method="get">
-				</c:if>
+				<form action="<c:url value="/adicionar"/>" method="post">
 
-				<caption>
-					<h2>
-						<c:if test="${patrimonio != null}">
-                                    Editar Patrimonio
-                                </c:if>
-						<c:if test="${patrimonio == null}">
-                                    Adicionar Patrimonio
-                                </c:if>
-					</h2>
-				</caption>
+					<fieldset class="form-group">
+						<label>Descrição</label> <input type="text"
+							value="<c:out value='${patrimonio.descricao}' />"
+							class="form-control" name="descricao" required="required">
+					</fieldset>
 
-				<c:if test="${patrimonio != null}">
-					<input type="hidden" name="id"
-						value="<c:out value='${patrimonio.id}' />" />
-				</c:if>
+					<fieldset class="form-group">
+						<label>Localização</label> <input type="text"
+							value="<c:out value='${patrimonio.localizacao}' />"
+							class="form-control" name="localizacao" required="required">
+					</fieldset>
 
-				<fieldset class="form-group">
-					<label>Descrição</label> <input type="text"
-						value="<c:out value='${patrimonio.descricao}' />"
-						class="form-control" name="descricao" required="required">
-				</fieldset>
-
-				<fieldset class="form-group">
-					<label>Localização</label> <input type="text"
-						value="<c:out value='${patrimonio.localizacao}' />"
-						class="form-control" name="localizacao" required="required">
-				</fieldset>
-
-				<button type="submit" class="btn btn-success">Save</button>
+					<button type="submit" class="btn btn-success">Save</button>
 				</form>
 			</div>
 		</div>

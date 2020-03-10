@@ -14,28 +14,17 @@
 </head>
 
 <body>
-
-	<header>
-		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: gray">
-
-			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Listar Patrimonio</a></li>
-			</ul>
-		</nav>
-	</header>
 	<br>
 
 	<div class="row">
-	
+
 		<div class="container">
 			<h3 class="text-center">Inventário Patrimonial</h3>
 			<hr>
 			<div class="container text-left">
 
-				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Adicionar
-					Patrimonio</a>
+				<a href="<%=request.getContextPath()%>/adicionar"
+					class="btn btn-success">Adicionar Patrimonio</a>
 			</div>
 			<br>
 			<table class="table table-bordered">
@@ -56,9 +45,10 @@
 							<td><c:out value="${pat.descricao}" /></td>
 							<td><c:out value="${pat.localizacao}" /></td>
 
-							<td><a href="edit?id=<c:out value='${pat.id}' />">Editar</a>
-								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="delete?id=<c:out value='${pat.id}' />">Deletar</a></td>
+							<td><a href="<c:url value="/edit?id=${pat.id}"/>"><i
+									class="far fa-edit"></i> Editar</a> <a
+								href="<c:url value="/delete/${pat.id}"/>"><i
+									class="far fa-trash-alt"></i> Excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

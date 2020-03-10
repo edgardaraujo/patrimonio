@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -11,22 +10,11 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/main.css">
 <body>
-
-	<header>
-		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: gray">
-
-			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Listar Patrimonio</a></li>
-			</ul>
-		</nav>
-	</header>
 	<br>
 	<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">
-				<form action="insert" method="get">
+				<form action="<c:url value="/adicionar"/>" method="post">
 
 					<fieldset class="form-group">
 						<label>Descrição</label> <input type="text"

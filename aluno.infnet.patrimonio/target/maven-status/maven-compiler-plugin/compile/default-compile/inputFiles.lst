@@ -1,6 +1,8 @@
 /Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/dao/PatrimonioJPADAO.java
-/Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/TesteConexao.java
+/Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/controler/EditarSrv.java
+/Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/controler/PatrimonioSrv.java
 /Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/JpaConnection.java
-/Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/controler/PatrimonioServlet.java
+/Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/controler/AdicionarSrv.java
 /Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/modelo/Patrimonio.java
+/Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/controler/DeletarSrv.java
 /Users/joeblack/git3/patrimonio/aluno.infnet.patrimonio/src/main/java/aluno/infnet/patrimonio/negocio/dao/JpaDAO.java

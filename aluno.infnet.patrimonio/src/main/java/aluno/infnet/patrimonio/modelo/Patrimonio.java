@@ -3,8 +3,10 @@ package aluno.infnet.patrimonio.modelo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "patrimonio")
 public class Patrimonio {
 
 	@Id

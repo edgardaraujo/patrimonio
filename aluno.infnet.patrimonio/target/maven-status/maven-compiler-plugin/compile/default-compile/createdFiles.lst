@@ -1,6 +1,8 @@
 aluno/infnet/patrimonio/negocio/dao/PatrimonioJPADAO.class
 aluno/infnet/patrimonio/negocio/dao/JpaDAO.class
+aluno/infnet/patrimonio/controler/AdicionarSrv.class
+aluno/infnet/patrimonio/controler/EditarSrv.class
+aluno/infnet/patrimonio/controler/DeletarSrv.class
 aluno/infnet/patrimonio/negocio/JpaConnection.class
 aluno/infnet/patrimonio/modelo/Patrimonio.class
-aluno/infnet/patrimonio/controler/PatrimonioServlet.class
-aluno/infnet/patrimonio/negocio/TesteConexao.class
+aluno/infnet/patrimonio/controler/PatrimonioSrv.class
